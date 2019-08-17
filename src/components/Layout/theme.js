@@ -35,7 +35,8 @@ const fontFamily = {
 };
 
 const color = {
-
+  brown: '#B9887D',
+  white: '#ffffff',
 };
 
 const textStyle = {
