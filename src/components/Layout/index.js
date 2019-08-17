@@ -9,6 +9,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import appTheme from './theme';
 import GlobalStyle from './GlobalStyle';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MainWrapper = styled.div``;
 

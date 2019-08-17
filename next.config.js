@@ -1,8 +1,9 @@
+const withCSS = require('@zeit/next-css');
 const env = require('./config/env.js');
 // const serverRuntime = require('./config/serverRuntime.js');
 // const publicRuntime = require('./config/publicRuntime.js');
 
-module.exports = {
+module.exports = withCSS({
   webpack(config) {
     const copyConfig = config;
     const originalEntry = copyConfig.entry;
@@ -23,4 +24,4 @@ module.exports = {
   },
   // serverRuntimeConfig: {},
   // publicRuntimeConfig: {},
-};
+});
