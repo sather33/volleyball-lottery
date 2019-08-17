@@ -39,6 +39,12 @@ const color = {
   white: '#ffffff',
   grey: 'hsla(0, 0%, 0%, 0.2)',
   blue: '#006284',
+  skyBlue: '#58B2DC',
+  pink: '#F4A7B9',
+  yellow: '#FFB11B',
+  purple: '#77428D',
+  green: '#86C166',
+  red: '#E83015',
 };
 
 const textStyle = {
