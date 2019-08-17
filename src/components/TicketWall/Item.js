@@ -11,7 +11,7 @@ const InsideCard = styled.div`
 const First = styled(InsideCard)`
   transform: rotate3d(0, 1, 0, 180deg);
   ${({ theme }) => theme.font.face().size('40').weight('500').align('center')
-    .color('white')
+    .color('black')
     .css()};
   
   ${({ theme }) => theme.media.phone} {
