@@ -17,7 +17,7 @@ const TicketWall = (props) => {
         {list.map((item, index) => {
           const generateKey = `${item}_${index}`;
           return (
-            <Col width={[1 / 4]} key={generateKey}>
+            <Col width={[1 / 4, 1 / 4, 1 / 2]} key={generateKey}>
               <Card letter={item} />
             </Col>
           );

@@ -13,6 +13,10 @@ const First = styled(InsideCard)`
   ${({ theme }) => theme.font.face().size('40').weight('500').align('center')
     .color('white')
     .css()};
+  
+  ${({ theme }) => theme.media.phone} {
+    ${({ theme }) => theme.font.face().size('32').css()};
+  }
 `;
 const Second = styled(InsideCard)`
   ${({ theme }) => theme.font.face().size('60').weight('500').align('center')

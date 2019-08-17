@@ -100,11 +100,13 @@ const IndexPage = () => {
                       <InputGroupAddon addonType='prepend'>女</InputGroupAddon>
                       <Input placeholder='輸入數字' type='number' name='female' />
                     </Item>
-                    <Item>
-                      <Button>開始抽籤</Button>
-                    </Item>
                   </InputWrapper>
                 </InputGroup>
+                <InputWrapper>
+                  <Item>
+                    <Button>開始抽籤</Button>
+                  </Item>
+                </InputWrapper>
               </Form>
               <TicketWrapper>
                 <Grid verticalGutter={['20px']}>
