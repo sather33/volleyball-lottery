@@ -49,6 +49,21 @@ const Wrapper = styled.div`
   padding-top: 50px;
 `;
 
+const shuffle = (arr) => {
+  let i;
+  let j;
+  let temp;
+  const copyArray = arr;
+  for (i = copyArray.length - 1; i > 0; i -= 1) {
+    j = Math.floor(Math.random() * (i + 1));
+    temp = copyArray[i];
+    copyArray[i] = copyArray[j];
+    copyArray[j] = temp;
+  }
+  return copyArray;
+};
+
+
 const generateTicket = (maleNumber, femaleNumber) => {
   const signing = [...Array(maleNumber + femaleNumber)].map((item, index) => {
     if (index % 3 === 0) { return 'A'; }
@@ -56,8 +71,8 @@ const generateTicket = (maleNumber, femaleNumber) => {
     return 'C';
   });
   return ({
-    male: signing,
-    female: signing.splice(maleNumber),
+    female: shuffle(signing.splice(maleNumber)),
+    male: shuffle(signing),
   });
 };
 
