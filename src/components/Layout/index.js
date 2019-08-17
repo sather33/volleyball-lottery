@@ -17,7 +17,7 @@ const AppWrapper = styled.div`
   flex-direction: column;
   min-height: 100vh;
   font-family: ${({ theme }) => theme.font.family.primary};
-  background-color: ${({ theme }) => theme.color.brown};
+  background-color: ${({ theme }) => theme.color.blue};
   
   ${MainWrapper} {
     flex: 1 1 auto;
