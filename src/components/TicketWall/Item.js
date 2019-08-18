@@ -30,7 +30,7 @@ const Text = styled.div`
   height: 100%;
   background-color: ${({ theme }) => theme.color.white};
   transform: rotate3d(0, 1, 0, -180deg);
-
+  overflow: hidden;
   animation: ${({ isClick }) => (isClick ? 'flip-right 0.6s cubic-bezier(.25,.46,.45,.94) both' : null)};
   
   @keyframes flip-right {
@@ -62,6 +62,7 @@ const Text = styled.div`
 `;
 const Wrapper = styled.div`
   cursor: pointer;
+  overflow: hidden;
 `;
 // transform: rotate3d(0, 1, 0, 70deg);
 
