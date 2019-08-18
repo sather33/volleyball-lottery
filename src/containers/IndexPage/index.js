@@ -2,11 +2,24 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import NextSeo from 'next-seo';
 import {
-  InputGroup, InputGroupAddon, Input, Form, Button,
+  InputGroupAddon, Input, Form, Button,
 } from 'reactstrap';
 import { GridWrapper, Grid, Col } from '@sorosora/grid';
 import TicketWall from 'components/TicketWall';
 
+const Desktop = {};
+const Phone = {};
+
+const ResetButton = styled.button`
+  width: 35px;
+  height: 35px;
+  border: 0;
+  background-color: transparent;
+  background-image: url('/static/images/icon/refresh-page-arrow-button.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+`;
 const Title = styled.div`
   width: 100%;
   ${({ theme }) => theme.font.face('title').align('center').weight('700').css()};
@@ -14,6 +27,17 @@ const Title = styled.div`
 const Item = styled.div`
   display: flex;
   padding: 0 5px;
+`;
+Desktop.Item = styled(Item)`
+  ${({ theme }) => theme.media.phone} {
+    display: none;
+  }
+`;
+Phone.Item = styled(Item)`
+    display: none;
+  ${({ theme }) => theme.media.phone} {
+    display: flex;
+  }
 `;
 const Block = styled.div`
   padding: 20px;
@@ -91,6 +115,10 @@ const IndexPage = () => {
       alert('請輸入數字');
     }
   };
+  const handleReset = () => {
+    setMaleList([]);
+    setFemaleList([]);
+  };
   return (
     <Wrapper>
       <NextSeo
@@ -108,17 +136,26 @@ const IndexPage = () => {
             <Container>
               <Title>清水分隊抽籤</Title>
               <Form onSubmit={e => handleSubmit(e)}>
-                <InputGroup>
-                  <InputWrapper>
-                    <Item>
-                      <InputGroupAddon addonType='prepend'>女</InputGroupAddon>
-                      <Input placeholder='輸入數字' type='number' name='female' />
-                    </Item>
-                    <Item>
-                      <Button>開始抽籤</Button>
-                    </Item>
-                  </InputWrapper>
-                </InputGroup>
+                <InputWrapper>
+                  <Item>
+                    <InputGroupAddon addonType='prepend'>女</InputGroupAddon>
+                    <Input placeholder='輸入數字' type='number' name='female' />
+                  </Item>
+                  <Desktop.Item>
+                    <Button>開始抽籤</Button>
+                  </Desktop.Item>
+                  <Desktop.Item>
+                    <ResetButton type='button' onClick={handleReset} />
+                  </Desktop.Item>
+                </InputWrapper>
+                <InputWrapper>
+                  <Phone.Item>
+                    <Button>開始抽籤</Button>
+                  </Phone.Item>
+                  <Phone.Item>
+                    <ResetButton type='button' onClick={handleReset} />
+                  </Phone.Item>
+                </InputWrapper>
               </Form>
               <TicketWrapper>
                 <Grid verticalGutter={['20px']}>

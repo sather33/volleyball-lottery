@@ -45,6 +45,7 @@ const color = {
   purple: '#77428D',
   green: '#86C166',
   red: '#E83015',
+  darkGreen: '#5B622E',
 };
 
 const textStyle = {
