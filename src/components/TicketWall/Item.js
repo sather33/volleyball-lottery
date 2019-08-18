@@ -31,7 +31,7 @@ const Text = styled.div`
   background-color: ${({ theme }) => theme.color.white};
   transform: rotate3d(0, 1, 0, -180deg);
   overflow: hidden;
-  animation: ${({ isClick }) => (isClick ? 'flip-right 0.6s cubic-bezier(.25,.46,.45,.94) both' : null)};
+  animation: ${({ isClick }) => (isClick ? 'flip-right 0.6s linear both' : null)};
   
   @keyframes flip-right {
     0% {

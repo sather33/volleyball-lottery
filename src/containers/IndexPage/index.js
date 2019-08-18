@@ -83,9 +83,13 @@ const IndexPage = () => {
     event.preventDefault();
     event.persist();
     const femaleNumber = parseInt(event.target.female.value, 10);
-    const ticket = generateTicket(18 - femaleNumber, femaleNumber);
-    setMaleList(ticket.male);
-    setFemaleList(ticket.female);
+    if (!Number.isNaN(femaleNumber)) {
+      const ticket = generateTicket(18 - femaleNumber, femaleNumber);
+      setMaleList(ticket.male);
+      setFemaleList(ticket.female);
+    } else {
+      alert('請輸入數字');
+    }
   };
   return (
     <Wrapper>
