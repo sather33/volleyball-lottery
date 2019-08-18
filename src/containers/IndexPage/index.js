@@ -82,9 +82,8 @@ const IndexPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     event.persist();
-    const maleNumber = parseInt(event.target.male.value, 10);
     const femaleNumber = parseInt(event.target.female.value, 10);
-    const ticket = generateTicket(maleNumber, femaleNumber);
+    const ticket = generateTicket(18 - femaleNumber, femaleNumber);
     setMaleList(ticket.male);
     setFemaleList(ticket.female);
   };
@@ -103,25 +102,19 @@ const IndexPage = () => {
         <Grid>
           <Col width={[12 / 12]} offset={[0]}>
             <Container>
-              <Title>清水女網抽籤</Title>
+              <Title>清水分隊抽籤</Title>
               <Form onSubmit={e => handleSubmit(e)}>
                 <InputGroup>
                   <InputWrapper>
                     <Item>
-                      <InputGroupAddon addonType='prepend'>男</InputGroupAddon>
-                      <Input placeholder='輸入數字' type='number' name='male' />
-                    </Item>
-                    <Item>
                       <InputGroupAddon addonType='prepend'>女</InputGroupAddon>
                       <Input placeholder='輸入數字' type='number' name='female' />
                     </Item>
+                    <Item>
+                      <Button>開始抽籤</Button>
+                    </Item>
                   </InputWrapper>
                 </InputGroup>
-                <InputWrapper>
-                  <Item>
-                    <Button>開始抽籤</Button>
-                  </Item>
-                </InputWrapper>
               </Form>
               <TicketWrapper>
                 <Grid verticalGutter={['20px']}>
